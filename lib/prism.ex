@@ -173,7 +173,7 @@ defmodule Prism do
       iex> Prism.subscribe(:my_broker, "my_handler", [:foo, :bar], &Callback.call/2)
       :ok
 
-      iex> Prism.delete(:my_broker, "my_handler", [:foo, :bar], &Callback.call/2)
+      iex> Prism.delete(:my_broker, "my_handler")
       :ok
 
   """
