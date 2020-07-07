@@ -25,9 +25,9 @@ to the broker - any subscriber of that topic will have its handler function call
 This permits simple event-driven mechanisms to be implemented within applications.
 
 Prism avoids the use of processes when publishing events to subscribers. In that
-sense - handlers are all invoked in the publishing process. If you wish something
-to be done "out of band" from the publisher - you will be resposibsle for the
-implementation.
+sense - handlers are all invoked syncronously withinin the publishing process. If
+you wish something to be done "out of band" from the publisher - you will be
+resposibsle for the implementation.
 
 ```elixir
 defmodule MyBroker do

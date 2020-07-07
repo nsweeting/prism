@@ -186,9 +186,10 @@ defmodule Prism do
   @doc """
   Publishes an event to subscribers of the given topic.
 
-  Publishing is done in a syncronous manner. If you need work to be done "out of
-  bound" of the publisher - its your responsibility to implement it in that way.
-  Any exceptions raised by a handler will also propagate to the publisher.
+  Publishing is done in a syncronous manner within the calling process. If you
+  need work to be done "out of bound" of the publisher - its your responsibility
+  to implement it in that way. Any exceptions raised by a handler will also propagate
+  to the publisher.
 
   This will return a list of results in the format `{handler_id, result}`, where
   `result` is what is returned by the handler.
