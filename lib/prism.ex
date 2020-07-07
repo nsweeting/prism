@@ -16,8 +16,8 @@ defmodule Prism do
       defmodule MyBroker do
         use Prism
 
-        def start_link(opts \\\\ []) do
-          Prism.start_link(name: __MODULE__, subscribers)
+        def start_link(subscribers \\\\ []) do
+          Prism.start_link(name: __MODULE__, subscribers: subscribers)
         end
 
         def subscribe(handler_id, topic_or_topics, handler) do

@@ -34,8 +34,8 @@ defmodule MyBroker do
   # Adds the child_spec/1 callback required to use under a Supervisor
   use Prism
 
-  def start_link(subscribers \\\\ []) do
-    Prism.start_link(__MODULE__, subscribers)
+  def start_link(subscribers \\ []) do
+    Prism.start_link(name: __MODULE__, subscribers: subscribers)
   end
 
   def subscribe(handler_id, topic_or_topics, handler) do
