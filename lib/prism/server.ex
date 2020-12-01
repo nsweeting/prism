@@ -64,7 +64,8 @@ defmodule Prism.Server do
 
   defp init_subscribers(state, subscribers) do
     Enum.reduce(subscribers, state, fn {handler_id, topics, handler}, state ->
-      subscribe(state, handler_id, topics, handler)
+      {state, _} = subscribe(state, handler_id, topics, handler)
+      state
     end)
   end
 
